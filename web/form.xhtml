@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edição de Compras</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <f:facet name="footer">
+                    <div align="center">
+                        <h:commandButton value="Salvar"
+                                         action="#{controleCompra.gravar()}"/>
+                    </div>
+                </f:facet>
+                <h:outputLabel value="ID"/>
+                <h:inputText value="#{controleCompra.objeto.id}"
+                             size="5" readonly="true"/>
+                <h:outputLabel value="Nome"/>
+                <h:inputText value="#{controleCompra.objeto.c_nome}"
+                             size="40" maxlength="40"
+                             required="true"
+                             requiredMessage="O nome deve ser informado"/>
+                <h:outputLabel value="Endereço"/>
+                <h:inputText value="#{controleCompra.objeto.c_endereco}"
+                             size="40" maxlength="40"
+                             required="true"
+                             requiredMessage="O endereço deve ser informado"/>                               
+                <h:outputLabel value="Valor da compra"/>
+                <h:inputText value="#{controleCompra.objeto.valor_compra}"
+                             size="12" maxlength="12"
+                             required="true"
+                             requiredMessage="O valor da compra deve ser informado"/> 
+                 <h:outputLabel value="CEP de origem"/>
+                <h:inputText value="#{controleCompra.objeto.cep_origem}"
+                             size="12" maxlength="12"
+                             required="true"
+                             requiredMessage="O o cep de origem deve ser informado"/> 
+                 <h:outputLabel value="CEP de destino"/>
+                <h:inputText value="#{controleCompra.objeto.cep_destino}"
+                             size="12" maxlength="12"
+                             required="true"
+                             requiredMessage="O CEP de destino deve ser informado"/> 
+                 <h:outputLabel value="Valor do frete"/>
+                <h:inputText value="#{controleCompra.objeto.valor_frete}"
+                             size="12" maxlength="12"
+                             required="true"
+                             requiredMessage="O valor do frete deve ser informado"/> 
+                 <h:outputLabel value="Prazo de entrega"/>
+                <h:inputText value="#{controleCompra.objeto.prazo_entrega}"
+                             size="12" maxlength="12"
+                             required="true"
+                             requiredMessage="O prazo de entrega deve ser informado"/> 
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
