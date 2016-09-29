@@ -1,12 +1,73 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Cliente para o serviço CRUD de Compras</title>
     </h:head>
     <h:body>
-        Cliente WSDL
+        <h:form>
+            <h:commandButton value="Novo" action="#{controleCompra.novo()}"/>
+            <h:dataTable value="#{controleCompra.dao.listaCompras}" var="obj">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="ID"/>
+                    </f:facet>
+                    <h:outputLabel value="#{obj.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Nome"/>
+                    </f:facet>
+                    <h:outputLabel value="#{obj.CNome}"/>
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Endereço"/>
+                    </f:facet>
+                    <h:outputLabel value="#{obj.CEndereco}"/>
+                </h:column>   
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Destino"/>
+                    </f:facet>
+                    <h:outputLabel value="#{obj.cepDestino}"/>
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CEP origem"/>
+                    </f:facet>
+                    <h:outputLabel value="#{obj.cepOrigem}"/>
+                </h:column> 
+                  <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CEP origem"/>
+                    </f:facet>
+                    <h:outputLabel value="#{obj.cepOrigem}"/>
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Prazo de entrega"/>
+                    </f:facet>
+                     <h:outputLabel value="#{obj.prazoEntrega}"/>
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Alterar"/>
+                    </f:facet>
+                    <h:commandLink value="Alterar"
+                                   action="#{controleCompra.alterar(obj)}"/>
+                </h:column>   
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Remover"/>
+                    </f:facet>
+                    <h:commandLink value="Remover"
+                                   action="#{controleCompra.remover(obj.id)}"/>
+                </h:column>                   
+            </h:dataTable>
+        </h:form>
     </h:body>
 </html>
 
